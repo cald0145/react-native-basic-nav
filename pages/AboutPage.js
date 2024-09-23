@@ -1,81 +1,68 @@
+import React from "react";
 import {
   SafeAreaView,
   StyleSheet,
   Text,
   View,
   Image,
+  Button,
   ScrollView,
 } from "react-native";
 
-export default function HomePage() {
+const AboutPage = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View>
-          <Image
-            source={require("../assets/dog.png")}
-            style={{
-              borderColor: "#eee",
-              borderWidth: 5,
-              width: 300,
-              height: 400,
-            }}
-          />
-          <Text>
-            Lorem Ipsum: Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum. Sed ut perspiciatis unde omnis iste natus error sit
-            voluptatem accusantium doloremque laudantium, totam rem aperiam,
-            eaque ipsa quae ab illo inventore veritatis et quasi architecto
-            beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-            voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-            quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-            adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-            labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-            minima veniam, quis nostrum exercitationem ullam corporis suscipit
-            laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-            vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-            nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum. Sed ut perspiciatis unde omnis iste natus error sit
-            voluptatem accusantium doloremque laudantium, totam rem aperiam,
-            eaque ipsa quae ab illo inventore veritatis et quasi architecto
-            beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-            voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-            quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-            adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-            labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-            minima veniam, quis nostrum exercitationem ullam corporis suscipit
-            laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-            vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-            nulla pariatur?
-          </Text>
-        </View>
+    <SafeAreaView>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Text style={styles.text}>About me</Text>
+        <Image source={require("../assets/me-silo.jpeg")} style={styles.image} />
+        <Text>
+          Voluptate mollit ex nisi in ea eu aute minim proident. Do esse aliquip
+          in ea ut elit sint Lorem. Adipisicing et officia est cupidatat
+          excepteur. Eu minim culpa excepteur commodo occaecat veniam labore
+          labore quis sit et cupidatat. Incididunt nisi eiusmod ullamco
+          cupidatat aliquip dolore nulla culpa anim consequat excepteur
+          reprehenderit eiusmod. Excepteur mollit ad velit anim fugiat consequat
+          deserunt et. Laborum eu incididunt in voluptate non consectetur
+          adipisicing eiusmod velit esse irure qui pariatur. Exercitation
+          laboris laboris laborum ea. Nisi non nulla nulla consequat nisi veniam
+          tempor dolore eiusmod. Eiusmod nisi non aute dolore anim cupidatat do
+          adipisicing ut ex elit commodo occaecat ullamco. Laboris cupidatat
+          excepteur tempor mollit labore sunt consectetur quis pariatur ut culpa
+          cillum incididunt officia. Officia exercitation mollit laboris id
+          dolor velit dolor nostrud fugiat mollit dolor labore id.
+        </Text>
+        <Button
+          title="Go to Home Page"
+          onPress={() => navigation.navigate("HomePage")}
+        />
+        <Button
+          title="Go to the List Page"
+          onPress={() => navigation.navigate("ListPage")}
+        />
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-    // paddingTop: 48,
+  scrollContainer: {
+    backgroundColor: "#E8EBE4",
+    padding: 15,
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 30,
+    color: "#676D61",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontStyle: "italic",
+    paddingBottom: 15,
+  },
+  image: {
+    width: "100%",
+    height: 400,
+    marginBottom: 15,
   },
 });
+
+export default AboutPage;
